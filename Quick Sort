@@ -1,0 +1,23 @@
+#Quick Sort
+
+#Complexity
+Time : O(n^2)
+Space : O(log(n))
+Stable : NO
+
+def quicksort(arr):
+    length=len(arr)
+    if length<=1:
+        return arr
+    else:
+        pivot=arr.pop()
+    item_greater=[]
+    item_lower=[]
+    for item in arr:
+        if item>pivot:
+            item_greater.append(item)
+        else:
+            item_lower.append(item)
+    return quicksort(item_lower)+pivot+quicksort(item_greater)
+arr=list(map(int,input().split(" ")))
+print(quicksort(arr))
