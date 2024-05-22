@@ -1,0 +1,42 @@
+#Merge Sort
+
+#Algorithm
+1) The MergeSort function repeatedly divides the array into two halves until we reach a stage where we try to perform MergeSort on a subarray of size 1
+2) After that, the merge function comes into play and combines the sorted arrays into larger arrays until the whole array is merged.
+3) Divide and conquer method
+
+#Complexity
+Time : O(log(n))
+Space : O(n)
+Stable : YES
+
+def merge(arr):
+    if len(arr)>1:
+        mid=len(arr)//2
+        left=arr[:mid]
+        right=arr[mid:]
+        
+        merge(left)
+        merge(right)
+        i=j=k=0
+        
+        while i<len(left) and j<len(right):
+            if left[i]<right[j]:
+                arr[k]=left[i]
+                i+=1
+            else:
+                arr[k]=right[j]
+                j+=1
+            k+=1
+        while i<len(left):
+            arr[k]=left[i]
+            i+=1
+            k+=1
+        while j<len(right):
+            arr[k]=right[j]
+            j+=1
+            k+=1
+    return arr
+    
+arr=[1,4,3,6,2,5]
+print(merge(arr))
