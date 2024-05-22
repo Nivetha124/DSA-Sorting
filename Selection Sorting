@@ -1,0 +1,19 @@
+#Selection sorting
+
+# Algorithm
+1) Initially iterate the list and assign the first element as min
+2) then again iterate the remaining element and compare to the each element as the first
+3) if minimum change the as min 
+4) swap the first value and then minimum value and return the array
+
+
+def selection(arr):
+    for i in range(len(arr)):
+        min=i
+        for j in range(i+1,len(arr)):
+            if arr[j]<arr[min]:
+                min=j
+        arr[i],arr[min]=arr[min],arr[i]
+    return arr
+arr=list(map(int,input("Enter your input").split(" ")))
+print(selection(arr))
