@@ -1,0 +1,20 @@
+# Bubble sort
+
+Algorithm
+1) First enter into loop compare the each element and next element 
+2) if first element is big then swap that element and next element
+3) return the arr
+
+Complexity:
+Time : O(n^2)
+Space : O(1)
+stable : YES 
+
+def bubble(arr):
+    for i in range(len(arr)):
+        for j in range(0,len(arr)-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr
+arr=[1,4,3,5,2]
+print(bubble(arr))
