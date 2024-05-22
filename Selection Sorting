@@ -6,6 +6,10 @@
 3) if minimum change the as min 
 4) swap the first value and then minimum value and return the array
 
+#Complexity 
+Time : O(n^2)
+Space : O(1)
+Stable : NO
 
 def selection(arr):
     for i in range(len(arr)):
